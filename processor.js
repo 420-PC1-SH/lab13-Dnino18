@@ -5,12 +5,16 @@ function processor(transmission) {
     let parts = transmission.split("::");
     let rawData = parts[1];
     //console.log(rawData);
-    if (rawData.charAt(0) !== "<"){
-        throw new Error('rawData is invalid ; Manque-le < au début');
+    if (rawData){
+        if (rawData.charAt(0) !== "<" && rawData.charAt(rawData.length -1) !== ">"){
+            throw new Error('rawData is invalid ; Manque-le < et >');
+        }else if (rawData.charAt(0) !== "<"){
+            throw new Error('rawData is invalid ; Manque-le < au début');
+        }else if (rawData.charAt(rawData.length -1) !== ">"){
+            throw new Error('rawData is invalid ; Manque-le > à la fin');
+        }        
     }
-    if (rawData.charAt(rawData.length -1) !== ">"){
-        throw new Error('rawData is invalid ; Manque-le > à la fin');
-    }
+
     return {
         id: Number(parts[0]),
         rawData: rawData
