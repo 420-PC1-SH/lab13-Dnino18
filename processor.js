@@ -8,6 +8,9 @@ function processor(transmission) {
     if (rawData.charAt(0) !== "<"){
         throw new Error('rawData is invalid ; Manque-le < au début');
     }
+    if (rawData.charAt(rawData.length -1) !== ">"){
+        throw new Error('rawData is invalid ; Manque-le > à la fin');
+    }
     return {
         id: Number(parts[0]),
         rawData: rawData
