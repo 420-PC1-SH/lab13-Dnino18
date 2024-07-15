@@ -36,4 +36,9 @@ describe("transmission processor", function () {
         const expectedError = new Error('rawData is invalid ; Manque-le > à la fin');
         expect(() => { processor("9701::<487297403495720912"); }).toThrow(expectedError);
     });
+
+    test("Manque-le < et >", function (){
+        const expectedError = new Error('rawData is invalid ; Manque-le < et >');
+        expect(() => { processor("9701::487297403495720912"); }).toThrow(expectedError);
+    });
 });
