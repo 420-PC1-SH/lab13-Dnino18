@@ -28,7 +28,7 @@ describe("transmission processor", function () {
     });
 
     test("Manque-le < au début", function (){
-        const expectedError = new Error('Data is invalid ; should contain "<"');
+        const expectedError = new Error('rawData is invalid ; Manque-le < au début');
         expect(() => { processor("9701::487297403495720912>"); }).toThrow(expectedError);
     });
 });
