@@ -4,7 +4,10 @@ function processor(transmission) {
     }
     let parts = transmission.split("::");
     let rawData = parts[1];
-    console.log(rawData);
+    //console.log(rawData);
+    if (rawData.charAt(0) !== "<"){
+        throw new Error('rawData is invalid ; Manque-le < au début');
+    }
     return {
         id: Number(parts[0]),
         rawData: rawData
