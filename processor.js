@@ -15,8 +15,17 @@ function processor(transmission) {
         }        
     }
 
+    idNombre = parts[0];
+    if(idNombre){
+        idNombre = Number(idNombre);
+
+        if(isNaN(idNombre)){
+            throw new Error('id is invalid ; ne peut pas être converti en nombre');
+        }
+    }
+
     return {
-        id: Number(parts[0]),
+        id: idNombre,
         rawData: rawData
     };
 }

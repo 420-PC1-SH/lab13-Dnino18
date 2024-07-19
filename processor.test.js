@@ -44,6 +44,6 @@ describe("transmission processor", function () {
 
     test("La partie id de transmission ne peut pas être converti en Number", function (){
         const expectedError = new Error('id is invalid ; ne peut pas être converti en nombre');
-        expect(() => { processor("abc::487297403495720912"); }).toThrow(expectedError);
+        expect(() => { processor("abc::<487297403495720912>"); }).toThrow(expectedError);
     });
 });
