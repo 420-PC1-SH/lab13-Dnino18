@@ -15,6 +15,11 @@ function processor(transmission) {
         }        
     }
 
+    rawDataValide = /^<\d+>$/.test(rawData);
+    if(!rawDataValide){
+        throw new Error('rawData is invalid ; rawData ne peut contenir que des chiffres entre < et >');
+    }
+
     idNombre = parts[0];
     if(idNombre){
         idNombre = Number(idNombre);
