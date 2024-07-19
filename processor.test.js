@@ -41,4 +41,9 @@ describe("transmission processor", function () {
         const expectedError = new Error('rawData is invalid ; Manque-le < et >');
         expect(() => { processor("9701::487297403495720912"); }).toThrow(expectedError);
     });
+
+    test("La partie id de transmission ne peut pas être converti en Number", function (){
+        const expectedError = new Error('id is invalid ; ne peut pas être converti en nombre');
+        expect(() => { processor("abc::487297403495720912"); }).toThrow(expectedError);
+    });
 });
