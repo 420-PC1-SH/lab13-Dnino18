@@ -3,8 +3,14 @@ function greet(name) {
         return "Hello there";
     }
 
-    if (Array.isArray(name) && name.length === 2) {
-        return "Hello, " + name[0] + " and " + name[1];
+    if (Array.isArray(name)) {
+        if (name.length === 2) {
+            return "Hello, " + name[0] + " and " + name[1];
+        }
+        else if (name.length >= 3) {
+            const dernierNom = name.pop();
+            return "Hello, " + name.join(', ') + ", and " + dernierNom;
+        }
     }
 
     if (name === name.toUpperCase()) {

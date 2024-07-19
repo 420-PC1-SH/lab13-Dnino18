@@ -24,5 +24,5 @@ test("Si leparamètre qui est passé est un tableau de 3 éléments et plus", fu
     const noms = ['Jill', 'Jane', 'Leia']
     const plusNoms = ['Jill', 'Jane', 'Leia', 'Dei']
     expect(greet(noms)).toBe('Hello, Jill, Jane, and Leia');
-    expect(greet(plusNoms)).toBe('Jill, Jane, Leia, and Dei');
+    expect(greet(plusNoms)).toBe('Hello, Jill, Jane, Leia, and Dei');
 });
