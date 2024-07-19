@@ -19,3 +19,10 @@ test("Si leparamètre qui est passé est un tableau de deux éléments", functio
     const noms = ['Jango', 'Boba']
     expect(greet(noms)).toBe('Hello, Jango and Boba');
 });
+
+test("Si leparamètre qui est passé est un tableau de 3 éléments et plus", function () {
+    const noms = ['Jill', 'Jane', 'Leia']
+    const plusNoms = ['Jill', 'Jane', 'Leia', 'Dei']
+    expect(greet(noms)).toBe('Hello, Jill, Jane, and Leia');
+    expect(greet(plusNoms)).toBe('Jill, Jane, Leia, and Dei');
+});
